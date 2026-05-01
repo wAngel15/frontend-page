@@ -9,76 +9,44 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 
-<div class="container">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
-        <div class="text-center fs-10">
-            <span>Spectre Chrome</span>
-        </div>
 
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <a href="#" class="navbar-brand text-warning">Home</a>
-                </div>
-                <div class="col">
-                    <a href="/frontend/pages/about.html" class="navbar-brand text-warning">About Us</a>
-                </div>
-                <div class="col">
-                    <a href="/frontend/pages/contact.html" class="navbar-brand text-warning">Contact</a>
-                </div>
-            </div>
-        </div>
-
-    </nav>
-</div>
 
 <body class="bg-dark text-white mt-4 mb-4">
+    <div class="_navbar"></div>
     <div class="container">
         <section>
             <div class="row alignment-center">
                 <div class="col mt-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <article>
-                                WhatsApp
-                            </article>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-body">
-                            <article>
-                                WhatsApp
-                            </article>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-body">
-                            <article>
-                                WhatsApp
-                            </article>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-body">
-                            <article>
-                                WhatsApp
-                            </article>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-body">
-                            <article>
-                                WhatsApp
-                            </article>
-                        </div>
-                    </div>
+                    <div class="_card"></div>
                 </div>
             </div>
         </section>
-        <footer class="footer mt-4">
-            <div class="bg-success text-white text-center p-5">Derechos RESERVADOS</div>
-        </footer>
+        <div class="_footer"></div>
     </div>
 </body>
+
+<script>
+    fetch("/frontend/components/navbar.html")
+    .then(res => res.text())
+    .then(data => {
+    document.querySelector("._navbar").innerHTML = data;
+    });
+</script>
+
+<script>
+    fetch("/frontend/components/card.html")
+    .then(res => res.text())
+    .then(data => {
+    document.querySelector("._card").innerHTML = data;
+    });
+</script>
+
+<script>
+    fetch("/frontend/components/footer.html")
+    .then(res => res.text())
+    .then(data => {
+    document.querySelector("._footer").innerHTML = data;
+    });
+</script>
 
 </html>
